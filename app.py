@@ -8,7 +8,7 @@ st.title("🧠 IA Lotofácil")
 file = st.file_uploader("Envie histórico (.xlsx)")
 
 if file:
-    df = pd.read_excel(file)
+    df = pd.read_excel(file, engine="openpyxl")
     numeros = df.iloc[:, 1:16].values
     flat = numeros.flatten()
 
